@@ -237,4 +237,12 @@ function remote_validation() {
 
     exit;
 }
+
+add_filter( 'template_include', 'gov_order_page_template', 99 );
+function gov_order_page_template( $template ) {
+    if ( is_single() && 'gov_order' == get_post_type()  ) {
+       return plugin_dir_path(__FILE__) . 'govorder-page-template.php';
+    }
+    return $template;
+}
 ?>
