@@ -156,6 +156,23 @@ function prefix_register_meta_boxes( $meta_boxes ) {
                 'required'  => true,
             ),
             array(
+                  'name'       => 'Date picker',
+                  'id'         => 'field_id',
+                  'type'       => 'date',
+
+                  // Date picker options. See here http://api.jqueryui.com/datepicker
+                  'js_options' => array(
+                        'dateFormat'      => 'yy-mm-dd',
+                        'showButtonPanel' => false,
+                   ),
+
+                   // Display inline?
+                   'inline' => false,
+
+                   // Save value as timestamp?
+                   'timestamp' => false,
+                ),
+            array(
                 'id'               => 'file',
                 'name'             => 'File',
                 'type'             => 'file',
